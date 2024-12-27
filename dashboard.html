@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar styles */
+        .sidebar {
+            width: 250px;
+            background-color: #001A6E;
+            color: #fff;
+            padding: 20px;
+            position: fixed;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+        }
+
+        .sidebar ul li {
+            padding: 10px;
+            margin: 5px 0;
+        }
+
+        .sidebar ul li a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Profile photo section in sidebar */
+        .profile-photo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 60px;
+        }
+
+        .profile-photo img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #fff;
+        }
+
+        /* Main content styles */
+        .main-content {
+            flex-grow: 1;
+            padding: 20px;
+            background-color: #ECF0F1;
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzU2mKQITT16FukSho3mz4X9q-pMi_Pys20w&s');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            margin-left: 250px;
+            transition: margin-left 0.3s ease;
+        }
+
+        section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+        }
+
+        section h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #0056b3;
+        }
+
+        button {
+            background-color: #3498DB;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        button:hover {
+            background-color: black;
+        }
+
+        #participants-list, #tracks-list, #attendance-list {
+            margin-top: 20px;
+        }
+
+        #participants-list ul, #tracks-list ul, #attendance-list ul {
+            list-style-type: none;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            width: 300px;
+        }
+
+        .close-btn {
+            cursor: pointer;
+            font-size: 1.5em;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        /* Media Queries for Responsiveness */
+        /* For large screens (1280px and above) */
+        @media (min-width: 1280px) {
+            .sidebar {
+                width: 250px;
+            }
+
+            .main-content {
+                margin-left: 250px;
+                padding: 30px;
+            }
+
+            section {
+                font-size: 18px;
+            }
+
+            button {
+                font-size: 16px;
+            }
+        }
+
+        /* For medium-sized screens (1024px to 1279px) */
+        @media (max-width: 1279px) and (min-width: 1024px) {
+            .sidebar {
+                width: 200px;
+            }
+
+            .main-content {
+                margin-left:200px;
+                padding: 20px;
+            }
+
+            section {
+                font-size: 16px;
+            }
+
+            button {
+                font-size: 14px;
+            }
+        }
+
+        /* For small screens (768px to 1023px) */
+        @media (max-width: 1023px) and (min-width: 768px) {
+            .sidebar {
+                width: 180px;
+                position: absolute;
+                top: 0;
+                left: -180px;
+                transition: left 0.3s ease;
+            }
+
+            .sidebar.open {
+                left: 0;
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 20px;
+            }
+
+            section {
+                font-size: 14px;
+            }
+
+            button {
+                font-size: 14px;
+            }
+
+            .sidebar ul li {
+                padding: 8px;
+            }
+        }
+
+        /* For extra small screens (below 768px) */
+        @media (max-width: 767px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                left: 0;
+                top: 0;
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 15px;
+            }
+
+            .sidebar h2 {
+                font-size: 20px;
+            }
+
+            section {
+                font-size: 12px;
+            }
+
+            button {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Admin</h2>
+        
+        <!-- Profile Photo Section -->
+        <div class="profile-photo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmQbjkza_Zq64KZNGTadZrw5Q_E5uDlFSOuQ&s" alt="Profile Photo">
+        </div>
+
+        <ul>
+            <li><a href="#manage-participants">Manage Participants</a></li>
+            <li><a href="#manage-tracks">Manage Tracks</a></li>
+            <li><a href="#uploads">Uploads</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <h1>Welcome Admin</h1><br><br>
+        
+        <!-- Manage Participants Section -->
+        <section id="manage-participants">
+            <h2>Manage Participants</h2>
+            <button type="button" onclick="window.location.href='manage_participants.php';">Add Participant</button>
+            <div id="participants-list">
+                <!-- List of participants will be dynamically added here -->
+            </div>
+        </section>
+
+        <!-- Manage Tracks Section -->
+        <section id="manage-tracks">
+            <h2>Manage Tracks</h2>
+            <button type="button" onclick="window.location.href='track.php';">Add Track</button>
+            <div id="tracks-list">
+                <!-- List of tracks will be dynamically added here -->
+            </div>
+        </section>
+
+        <!-- Uploads Section -->
+        <section id="uploads">
+            <h2>Uploads</h2>
+            <button type="button" onclick="window.location.href='uploads.php';">Uploads</button>
+            <div id="upload-list">
+                <!-- List of participants will be dynamically added here -->
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>

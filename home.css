@@ -1,0 +1,444 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #001A6E;
+    color: white;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;  /* Stack the header and navigation vertically */
+    justify-content: center;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 40px;
+}
+
+mark {
+    background-color: #B1F0F7;
+}
+
+nav {
+    margin-top: 30px;  /* Add spacing between the header and navigation */
+}
+
+nav ul.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+ul.navbar li {
+    margin-left: 20px;
+}
+
+ul.navbar li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+ul.navbar li a:hover {
+    background-color: #005f99;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.main-content {
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    text-align: center;
+    padding: 50px 0px;
+}
+
+.section {
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 800px;
+    margin: 10px auto;
+}
+
+.section img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.login-container {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.section div {
+    flex-grow: 1;
+}
+
+.form-container {
+    background-color: #001A6E;
+    color: white;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 30px;
+    color: white;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    font-size: 16px;
+}
+
+button {
+    width: 50%;
+    margin: 0 auto;
+    display: block;
+    padding: 10px;
+    background-color: rgba(31, 214, 85, 0.8);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #FF9D3D;
+}
+
+p {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #555;
+}
+
+.schedule-container {
+    width: 100%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #001A6E;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.schedule-table th, .schedule-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.schedule-table th {
+    background-color: #213555;
+    color: white;
+    font-weight: bold;
+}
+
+.schedule-table tr:hover {
+    background-color: #0A5EB0;
+}
+
+.schedule-table tr:nth-child(even) {
+    background-color: #074799;
+}
+
+#about-us {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+ul li {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    line-height: 1.8;
+}
+
+ul li strong {
+    color: #007BFF;
+}
+
+.feedback-container {
+    width: 100%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #001A6E;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: white;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#contact {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+#contact h3 {
+    font-size: 40px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+#contact p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+#contact .section {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
+    background-color: #A6AEBF;
+    color: black;
+}
+
+#contact .section div {
+    flex: 1;
+    margin: 0 15px;
+}
+
+#contact a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+#contact a:hover {
+    text-decoration: underline;
+}
+
+#contact .login-container button {
+    padding: 12px 25px;
+    background-color: #4CAF50;
+    color: black;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#contact .login-container button:hover {
+    background-color: orange;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 1280px) {
+    header h1 {
+        font-size: 36px;
+    }
+
+    ul.navbar li a {
+        font-size: 0.9rem;
+    }
+
+    .section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section img {
+        margin-bottom: 20px;
+    }
+
+    .schedule-table th, .schedule-table td {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 1024px) {
+    header h1 {
+        font-size: 32px;
+    }
+
+    .container {
+        margin-top: 30px;
+    }
+
+    .main-content {
+        padding: 40px 20px;
+    }
+
+    .section {
+        flex-direction: column;
+        align-items: center;
+        margin: 15px 0;
+    }
+
+    .section img {
+        margin-bottom: 15px;
+    }
+
+    ul.navbar li {
+        margin-left: 15px;
+    }
+
+    ul.navbar li a {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+    .schedule-table th, .schedule-table td {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    nav ul.navbar {
+        flex-direction: column;
+    }
+
+    ul.navbar li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .section {
+        flex-direction: column;
+        align-items: center;
+        margin: 10px 0;
+    }
+
+    .section img {
+        margin-bottom: 20px;
+    }
+
+    .footer {
+        padding: 10px 0;
+    }
+
+    .schedule-table th, .schedule-table td {
+        padding: 10px;
+    }
+
+    .form-container {
+        padding: 20px;
+    }
+
+    .feedback-container {
+        padding: 15px;
+    }
+}
